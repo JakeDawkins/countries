@@ -4,10 +4,10 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "npm install && npm run build",
+  "updateContentCommand": "yarn && yarn build",
   "postCreateCommand": "",
   "postAttachCommand": {
-    "server": "npm run dev"
+    "server": "yarn dev"
   },
   "customizations": {
     "codespaces": {
