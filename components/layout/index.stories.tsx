@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof Layout>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+// const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Responsive = () => {
   return (

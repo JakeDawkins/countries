@@ -13,7 +13,8 @@ const COUNTRY_QUERY = gql`
 
 function CountryDetail() {
   const router = useRouter();
-  const code = router?.query?.code;
+  const code =
+    typeof router?.query?.code === 'string' ? router?.query?.code : undefined;
 
   const { loading, data, error } = useQuery(COUNTRY_QUERY, {
     variables: {
