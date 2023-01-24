@@ -1,6 +1,6 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
-import { Country } from '../../__generated__/graphql';
+import { Country, CountryInfoFragment } from '../../__generated__/graphql';
 import Icon, { IconName } from '../icon';
 
 interface InfoTileProps {
@@ -31,7 +31,7 @@ function InfoTile({ label, value, color = '#cccccc', icon }: InfoTileProps) {
 }
 
 interface CountryInfoProps {
-  country: Country;
+  country: CountryInfoFragment;
 }
 
 function CountryInfo({ country }: CountryInfoProps) {

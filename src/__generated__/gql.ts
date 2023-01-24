@@ -13,8 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "\n  query Country($code: ID!) {\n    country(code: $code) {\n      name\n      native\n      phone\n      continent {\n        name\n      }\n      capital\n      emoji\n    }\n  }\n": types.CountryDocument,
-    "\n  query CountriesList($code: ID!) {\n    countries {\n      name\n      code\n      emoji\n    }\n  }\n": types.CountriesListDocument,
+    "\n  query Country($code: ID!) {\n    country(code: $code) {\n      ...CountryInfo\n    }\n  }\n\n  fragment CountryInfo on Country {\n    __typename\n    name\n    native\n    phone\n    continent {\n      name\n    }\n    capital\n    emoji\n  }\n": types.CountryDocument,
+    "\n  query CountriesList {\n    countries {\n      name\n      code\n      emoji\n    }\n  }\n": types.CountriesListDocument,
 };
 
 /**
@@ -34,11 +34,11 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query Country($code: ID!) {\n    country(code: $code) {\n      name\n      native\n      phone\n      continent {\n        name\n      }\n      capital\n      emoji\n    }\n  }\n"): (typeof documents)["\n  query Country($code: ID!) {\n    country(code: $code) {\n      name\n      native\n      phone\n      continent {\n        name\n      }\n      capital\n      emoji\n    }\n  }\n"];
+export function gql(source: "\n  query Country($code: ID!) {\n    country(code: $code) {\n      ...CountryInfo\n    }\n  }\n\n  fragment CountryInfo on Country {\n    __typename\n    name\n    native\n    phone\n    continent {\n      name\n    }\n    capital\n    emoji\n  }\n"): (typeof documents)["\n  query Country($code: ID!) {\n    country(code: $code) {\n      ...CountryInfo\n    }\n  }\n\n  fragment CountryInfo on Country {\n    __typename\n    name\n    native\n    phone\n    continent {\n      name\n    }\n    capital\n    emoji\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query CountriesList($code: ID!) {\n    countries {\n      name\n      code\n      emoji\n    }\n  }\n"): (typeof documents)["\n  query CountriesList($code: ID!) {\n    countries {\n      name\n      code\n      emoji\n    }\n  }\n"];
+export function gql(source: "\n  query CountriesList {\n    countries {\n      name\n      code\n      emoji\n    }\n  }\n"): (typeof documents)["\n  query CountriesList {\n    countries {\n      name\n      code\n      emoji\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

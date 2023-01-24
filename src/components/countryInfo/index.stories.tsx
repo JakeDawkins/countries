@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import CountryInfo from '.';
 import { Country } from '../../__generated__/graphql';
-import { mockCountry } from '../../utils/mockData';
+import { mockCountryInfo } from '../../utils/mockData';
 
 export default {
   title: 'CountryInfo',
@@ -14,5 +14,19 @@ export default {
 } as ComponentMeta<typeof CountryInfo>;
 
 export const FullData = () => {
-  return <CountryInfo country={mockCountry} />;
+  const { __typename, continent, emoji, name, native, phone, capital } =
+    mockCountryInfo;
+  return (
+    <CountryInfo
+      country={{
+        __typename,
+        continent,
+        emoji,
+        name,
+        native,
+        phone,
+        capital,
+      }}
+    />
+  );
 };
