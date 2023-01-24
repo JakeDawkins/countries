@@ -28,13 +28,20 @@ interface IconProps {
   name: IconName;
   size: number;
   accessibilityLabel?: string;
+  color?: string;
 }
 
-function Icon({ name, size, accessibilityLabel }: IconProps) {
+function Icon({ name, size, accessibilityLabel, color }: IconProps) {
   const IconComponent = icons[name];
   if (!IconComponent) throw new Error('invalid icon name');
 
-  return <IconComponent size={size} accessibilityLabel={accessibilityLabel} />;
+  return (
+    <IconComponent
+      color={color}
+      size={size}
+      accessibilityLabel={accessibilityLabel}
+    />
+  );
 }
 
 export default Icon;
