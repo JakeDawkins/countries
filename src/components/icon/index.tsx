@@ -11,6 +11,7 @@ import GpsPin from './icons/gps-pin';
 import Map from './icons/map';
 import Phone from './icons/phone';
 import SpeechBubble from './icons/speech-bubble';
+import Wallet from './icons/wallet';
 
 export type IconName =
   | 'arrow-left'
@@ -22,7 +23,8 @@ export type IconName =
   | 'gps-pin'
   | 'map'
   | 'phone'
-  | 'speech-bubble';
+  | 'speech-bubble'
+  | 'wallet';
 export const icons: { [name in IconName]: React.ElementType } = {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
@@ -34,6 +36,7 @@ export const icons: { [name in IconName]: React.ElementType } = {
   map: Map,
   phone: Phone,
   'speech-bubble': SpeechBubble,
+  wallet: Wallet,
 };
 
 interface IconProps {

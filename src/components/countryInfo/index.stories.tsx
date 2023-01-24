@@ -14,8 +14,16 @@ export default {
 } as ComponentMeta<typeof CountryInfo>;
 
 export const FullData = () => {
-  const { __typename, continent, emoji, name, native, phone, capital } =
-    mockCountryInfo;
+  const {
+    __typename,
+    continent,
+    emoji,
+    name,
+    native,
+    phone,
+    capital,
+    languages,
+  } = mockCountryInfo;
   return (
     <CountryInfo
       country={{
@@ -26,6 +34,7 @@ export const FullData = () => {
         native,
         phone,
         capital,
+        languages,
       }}
     />
   );

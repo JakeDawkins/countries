@@ -14,6 +14,12 @@ export const mockCountryInfo: CountryInfoFragment = {
   capital: 'Washington D.C.',
   emoji: '🇺🇸',
   name: 'United States',
+  languages: [
+    {
+      name: 'English',
+    },
+  ],
+  currency: 'USD',
 };
 
 // { __typename?: 'Country', name: string, code: string, emoji: string }

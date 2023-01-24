@@ -26,6 +26,10 @@ export const COUNTRY_QUERY = gql`
     }
     capital
     emoji
+    languages {
+      name
+    }
+    currency
   }
 `;
 

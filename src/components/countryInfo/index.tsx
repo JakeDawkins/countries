@@ -75,6 +75,26 @@ function CountryInfo({ country }: CountryInfoProps) {
           value={`+${country.phone}`}
         />
       ) : null}
+      {country.currency ? (
+        <InfoTile
+          icon="wallet"
+          color="#047857"
+          label="Currency"
+          value={country.currency}
+        />
+      ) : null}
+      {country.languages?.length
+        ? country.languages.map((lang) => {
+            return (
+              <InfoTile
+                icon="speech-bubble"
+                color="#130478"
+                label="Language"
+                value={lang.name}
+              />
+            );
+          })
+        : null}
     </div>
   );
 }
