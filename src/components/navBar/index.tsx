@@ -12,9 +12,15 @@ interface NavItemProps {
 function NavItem({ href, label, isCollapsed, icon }: NavItemProps) {
   return (
     <Link aria-label={isCollapsed ? label : undefined} href={href}>
-      <div className="mt-4 flex flex-row p-2 px-4 border border-gray-500 rounded-full">
-        <Icon name={icon} size={26} />
-        {!isCollapsed ? <p className="ml-4">{label}</p> : undefined}
+      <div
+        className={`mt-4 flex flex-row h-10 items-center px-4 border border-gray-500 rounded-full overflow-hidden ${
+          isCollapsed ? 'w-10 justify-center px-0' : ''
+        }`}
+      >
+        <Icon name={icon} size={20} />
+        {!isCollapsed ? (
+          <p className="ml-4 whitespace-nowrap">{label}</p>
+        ) : undefined}
       </div>
     </Link>
   );
@@ -35,49 +41,51 @@ function NavBar() {
   return (
     // todo - collapse
     <nav
-      className={`sticky top-0 max-w-full p-4 bg-gray-50 border-r border-r-gray-200 ${
-        isCollapsed ? 'w-24' : 'w-48'
+      className={`flex flex-col sticky top-0 justify-between h-full max-w-full p-3 bg-gray-50 border-r border-r-gray-200 ${
+        isCollapsed ? 'w-16' : 'w-48'
       }`}
+      style={{ transition: 'width 0.3s' }}
     >
-      <div className="flex flex-row align-center justify-between">
+      <div className="">
         <Link href="/" aria-label="countries app. click to go home">
-          <Icon name="globe" size={48} />
+          <Icon name="globe" size={40} />
         </Link>
-        {/* icon - arrow for collapse */}
-        <button
-          type="button"
-          aria-label={`click to ${isCollapsed ? 'expand' : 'collapse'} nav`}
-          onClick={() => setIsCollapsed(!isCollapsed)}
-        >
-          <Icon size={20} name={isCollapsed ? 'arrow-right' : 'arrow-left'} />
-        </button>
+
+        <ul className="mt-8">
+          <li>
+            <NavItem
+              href="/"
+              label="Home"
+              icon="home"
+              isCollapsed={isCollapsed}
+            />
+          </li>
+          <li>
+            <NavItem
+              href="/search"
+              label="Search"
+              icon="search"
+              isCollapsed={isCollapsed}
+            />
+          </li>
+          <li>
+            <NavItem
+              href="/list"
+              label="List"
+              icon="list"
+              isCollapsed={isCollapsed}
+            />
+          </li>
+        </ul>
       </div>
-      <ul className="mt-4">
-        <li>
-          <NavItem
-            href="/"
-            label="Home"
-            icon="home"
-            isCollapsed={isCollapsed}
-          />
-        </li>
-        <li>
-          <NavItem
-            href="/search"
-            label="Search"
-            icon="search"
-            isCollapsed={isCollapsed}
-          />
-        </li>
-        <li>
-          <NavItem
-            href="/list"
-            label="List"
-            icon="list"
-            isCollapsed={isCollapsed}
-          />
-        </li>
-      </ul>
+      <button
+        className="flex w-full h-10 justify-end items-center px-2"
+        type="button"
+        aria-label={`click to ${isCollapsed ? 'expand' : 'collapse'} nav`}
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        <Icon size={20} name={isCollapsed ? 'arrow-right' : 'arrow-left'} />
+      </button>
     </nav>
   );
 }
