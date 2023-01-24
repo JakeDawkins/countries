@@ -7,7 +7,9 @@
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "generate:types": "graphql-codegen",
+    "generate:types:watch": "graphql-codegen -w"
   },
   "dependencies": {
     "@apollo/client": "^3.7.4",
@@ -18,6 +20,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@graphql-codegen/cli": "^2.16.4",
+    "@graphql-codegen/client-preset": "^1.2.6",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -39,6 +43,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   }
 }

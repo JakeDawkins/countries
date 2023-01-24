@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useWindowDimensions } from '../../utils/useWindowDimensions';
 import Icon, { IconName } from '../icon';
 import Link from 'next/link';
 import useBreakpoint from '../../utils/useBreakpoint';
