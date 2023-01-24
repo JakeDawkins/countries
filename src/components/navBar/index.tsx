@@ -35,7 +35,7 @@ function NavBar() {
   return (
     // todo - collapse
     <nav
-      className={`h-full max-w-full p-4 bg-gray-200 ${
+      className={`sticky top-0 max-w-full p-4 bg-gray-50 border-r border-r-gray-200 ${
         isCollapsed ? 'w-24' : 'w-48'
       }`}
     >
