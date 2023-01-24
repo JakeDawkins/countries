@@ -9,18 +9,37 @@ interface NavItemProps {
   icon: IconName;
   isCollapsed: boolean;
 }
+/**
+ * A single link button in the navbar
+ *
+ * controls the growing/shrinking buttons and their animations
+ */
 function NavItem({ href, label, isCollapsed, icon }: NavItemProps) {
   return (
     <Link aria-label={isCollapsed ? label : undefined} href={href}>
       <div
-        className={`mt-4 flex flex-row h-10 items-center px-4 border border-gray-500 rounded-full overflow-hidden ${
-          isCollapsed ? 'w-10 justify-center px-0' : ''
+        // collapsed: 36px high/wide = 2px total border, 16px total pad, 18px icon
+        className={`mt-4 flex flex-row h-9 p-2 px-4 items-center border border-gray-500 rounded-full overflow-x-clip ${
+          isCollapsed ? 'w-9 px-2' : 'w-full'
         }`}
+        style={{
+          transition: 'all 0.3s',
+        }}
       >
-        <Icon name={icon} size={20} />
-        {!isCollapsed ? (
-          <p className="ml-4 whitespace-nowrap">{label}</p>
-        ) : undefined}
+        {/* this div keeps the icon a set size, where it can't be squeezed */}
+        <div /*className="w-5 h-5"*/>
+          <Icon name={icon} size={18} />
+        </div>
+        <p
+          className={`ml-4 whitespace-nowrap`}
+          style={{
+            // slightly faster, to disappear behind the "sliding" button border
+            transition: 'all 0.2s',
+            ...(isCollapsed ? { opacity: 0 } : {}),
+          }}
+        >
+          {label}
+        </p>
       </div>
     </Link>
   );
@@ -39,7 +58,6 @@ function NavBar() {
   }, [breakpoint]);
 
   return (
-    // todo - collapse
     <nav
       className={`flex flex-col sticky top-0 justify-between h-full max-w-full p-3 bg-gray-50 border-r border-r-gray-200 ${
         isCollapsed ? 'w-16' : 'w-48'
