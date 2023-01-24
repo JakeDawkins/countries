@@ -1,10 +1,13 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
+import { Country } from '../../__generated__/graphql';
 
-interface CountryInfo {
-  code: string;
-  name: string;
+interface CountryInfoProps {
+  country: Country;
 }
 
-function CountryInfo({ name, code }: CountryInfo) {
-  return null;
+function CountryInfo({ country }) {
+  return <p>{JSON.stringify(country)}</p>;
 }
+
+export default CountryInfo;

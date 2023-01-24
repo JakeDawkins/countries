@@ -17,10 +17,12 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
+    // @ts-ignore TS2339: Property 'hasError' does not exist on type 'Readonly<{}>'
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;
     }
 
+    // @ts-ignore TS2339: Property 'children' does not exist on type 'Readonly<{}>'
     return this.props.children;
   }
 }
