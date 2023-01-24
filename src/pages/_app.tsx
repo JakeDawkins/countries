@@ -5,6 +5,7 @@ import {
   ApolloProvider,
   gql,
 } from '@apollo/client';
+import { Layout } from '../components';
 
 const client = new ApolloClient({
   uri: 'https://countries.trevorblades.com/',
@@ -14,7 +15,9 @@ const client = new ApolloClient({
 export default function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
-      <Component {...pageProps} />;
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ApolloProvider>
   );
 }

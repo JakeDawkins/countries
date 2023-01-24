@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layout } from '../components';
 import { gql, useQuery } from '@apollo/client';
 import { CountriesListQuery } from '../__generated__/graphql';
 import Link from 'next/link';
@@ -24,7 +23,7 @@ function Search() {
   const countries = data.countries;
 
   return (
-    <Layout>
+    <>
       <h1 className="text-4xl font-bold">Search</h1>
       {countries.map((country) => {
         return (
@@ -35,7 +34,7 @@ function Search() {
           </Link>
         );
       })}
-    </Layout>
+    </>
   );
 }
 
