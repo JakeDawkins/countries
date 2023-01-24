@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import CountryDetailPage, { COUNTRY_QUERY } from './[code]';
+import CountryDetailPage, { COUNTRY_QUERY } from './[code].page';
 import { GraphQLError } from 'graphql';
 
 import mockRouter from 'next-router-mock';
