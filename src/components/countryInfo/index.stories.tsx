@@ -37,6 +37,7 @@ export const MissingPieces = () => {
     mockCountryInfo;
   return (
     <CountryInfo
+      // @ts-ignore - this is supposed to be incomplete data
       country={{
         continent,
         name,
