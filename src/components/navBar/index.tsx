@@ -24,7 +24,11 @@ function NavItem({ href, label, isCollapsed, icon, isActive }: NavItemProps) {
         // collapsed: 36px high/wide = 2px total border, 16px total pad, 18px icon
         className={`mt-4 flex flex-row h-9 p-2 px-4 items-center border rounded-full overflow-x-clip ${
           isCollapsed ? 'w-9 px-2' : 'w-full'
-        } ${isActive ? 'border-green-700 bg-green-50' : 'border-gray-500'}`}
+        } ${
+          isActive
+            ? 'border-green-700 bg-green-50'
+            : 'border-gray-300 hover:border-gray-500 hover:bg-gray-200'
+        }`}
         style={{
           transition: 'all 0.3s',
         }}

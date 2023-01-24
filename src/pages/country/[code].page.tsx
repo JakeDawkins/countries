@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { CountryInfo } from '../../components';
 import { gql, useQuery } from '@apollo/client';
+import Link from 'next/link';
+import { CountryInfo, Icon } from '../../components';
 import {
   CountryQuery,
   Country,
@@ -47,7 +48,11 @@ function CountryDetail() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold">
+      <Link href="/list" className=" justify-start items-center flex flex-row">
+        <Icon name="arrow-left" size={18} />
+        <p className="underline ml-2">Back to List</p>
+      </Link>
+      <h1 className="text-4xl font-bold mb-8 mt-8">
         {country.name || 'Not Found'}
         {country.emoji ? `  ${country.emoji}` : undefined}
       </h1>
