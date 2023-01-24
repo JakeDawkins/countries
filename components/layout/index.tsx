@@ -1,13 +1,21 @@
 import React from 'react';
+import ErrorBoundary from '../errorBoundary';
+import NavBar from '../navBar';
 
-function CountryDetail({ children }) {
+function Layout({ children }) {
   return (
-    <>
-      {/* Navbar */}
-      <main className="m-0 w-full h-full">{children}</main>
-      {/* Footer */}
-    </>
+    <div className="flex flex-row absolute top-0 bottom-0 right-0 left-0">
+      <ErrorBoundary>
+        <NavBar />
+        <ErrorBoundary>
+          <main className="m-4 mx-auto p-4 w-2/3 h-full border-4 border-red-500">
+            {children}
+          </main>
+        </ErrorBoundary>
+        {/* Footer */}
+      </ErrorBoundary>
+    </div>
   );
 }
 
-export default CountryDetail;
+export default Layout;
