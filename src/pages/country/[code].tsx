@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { CountryInfo, Layout } from '../../components';
+import { CountryInfo } from '../../components';
 import { gql, useQuery } from '@apollo/client';
 import {
   CountryQuery,
@@ -47,14 +47,14 @@ function CountryDetail() {
   const country = data.country as CountryInfoFragment;
 
   return (
-    <Layout>
+    <>
       <h1 className="text-4xl font-bold">
         {country.name || 'Not Found'}
         {country.emoji ? `  ${country.emoji}` : undefined}
       </h1>
       {/* todo -- failure */}
       <CountryInfo country={country} />
-    </Layout>
+    </>
   );
 }
 
