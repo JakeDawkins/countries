@@ -3,7 +3,7 @@ import { gql, useQuery } from '@apollo/client';
 import { CountriesListQuery } from '../__generated__/graphql';
 import Link from 'next/link';
 
-const COUNTRIES_LIST_QUERY = gql`
+export const COUNTRIES_LIST_QUERY = gql`
   query CountriesList {
     countries {
       name

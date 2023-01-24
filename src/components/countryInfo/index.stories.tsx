@@ -30,3 +30,18 @@ export const FullData = () => {
     />
   );
 };
+
+// This is to make sure we're appropriately handling missing data
+export const MissingPieces = () => {
+  const { __typename, continent, emoji, name, native, phone, capital } =
+    mockCountryInfo;
+  return (
+    <CountryInfo
+      country={{
+        continent,
+        name,
+        capital,
+      }}
+    />
+  );
+};

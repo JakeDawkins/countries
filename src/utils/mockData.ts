@@ -1,4 +1,8 @@
-import { Country, CountryInfoFragment } from '../__generated__/graphql';
+import {
+  CountriesListQuery,
+  Country,
+  CountryInfoFragment,
+} from '../__generated__/graphql';
 
 export const mockCountryInfo: CountryInfoFragment = {
   __typename: 'Country',
@@ -10,4 +14,11 @@ export const mockCountryInfo: CountryInfoFragment = {
   capital: 'Washington D.C.',
   emoji: '🇺🇸',
   name: 'United States',
+};
+
+// { __typename?: 'Country', name: string, code: string, emoji: string }
+export const mockCountryList: Pick<CountriesListQuery, 'countries'> = {
+  countries: [
+    { __typename: 'Country', name: 'My Country', code: 'HI', emoji: '👋' },
+  ],
 };

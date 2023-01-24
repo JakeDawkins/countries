@@ -8,7 +8,7 @@ import {
   CountryInfoFragment,
 } from '../../__generated__/graphql';
 
-const COUNTRY_QUERY = gql`
+export const COUNTRY_QUERY = gql`
   query Country($code: ID!) {
     country(code: $code) {
       ...CountryInfo
@@ -32,7 +32,6 @@ function CountryDetail() {
   const router = useRouter();
   const code =
     typeof router?.query?.code === 'string' ? router?.query?.code : undefined;
-
   const { loading, data, error } = useQuery<CountryQuery>(COUNTRY_QUERY, {
     variables: {
       code: code?.toUpperCase(),
@@ -40,7 +39,7 @@ function CountryDetail() {
     skip: !code,
   });
 
-  if (loading || !data) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
   if (error || !data?.country) return <p>Error</p>;
 
   // TODO -- fix fragment typing
@@ -52,7 +51,6 @@ function CountryDetail() {
         {country.name || 'Not Found'}
         {country.emoji ? `  ${country.emoji}` : undefined}
       </h1>
-      {/* todo -- failure */}
       <CountryInfo country={country} />
     </>
   );

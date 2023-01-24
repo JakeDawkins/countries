@@ -20,6 +20,7 @@ function NavItem({ href, label, isCollapsed, icon, isActive }: NavItemProps) {
   return (
     <Link aria-label={isCollapsed ? label : undefined} href={href}>
       <div
+        data-testid="nav-item-wrapper-div"
         // collapsed: 36px high/wide = 2px total border, 16px total pad, 18px icon
         className={`mt-4 flex flex-row h-9 p-2 px-4 items-center border rounded-full overflow-x-clip ${
           isCollapsed ? 'w-9 px-2' : 'w-full'
@@ -104,6 +105,7 @@ function NavBar() {
         </ul>
       </div>
       <button
+        data-testid="toggle-nav"
         className="flex w-full h-10 justify-end items-center px-2 mt-8"
         type="button"
         aria-label={`click to ${isCollapsed ? 'expand' : 'collapse'} nav`}

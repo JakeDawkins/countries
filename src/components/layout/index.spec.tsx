@@ -1,5 +1,18 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import Layout from '.';
 
-it.todo('renders', () => {
-  // TODO
+jest.mock('next/router', () => require('next-router-mock'));
+
+describe('Layout', () => {
+  it('renders content and nav', () => {
+    render(
+      <Layout>
+        <p>Main Content</p>
+      </Layout>,
+    );
+
+    expect(screen.getByText('Main Content')).toBeVisible();
+    // nav link
+    expect(screen.getByText('Home')).toBeVisible();
+  });
 });

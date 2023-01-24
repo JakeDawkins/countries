@@ -10,9 +10,15 @@ interface InfoTileProps {
   color?: string;
 }
 
-function InfoTile({ label, value, color = '#cccccc', icon }: InfoTileProps) {
+export function InfoTile({
+  label,
+  value,
+  color = '#cccccc',
+  icon,
+}: InfoTileProps) {
   return (
     <div
+      data-testid="info-tile"
       className="rounded-xl border flex flex-row mr-4 mt-4 overflow-hidden"
       style={{ borderColor: color }}
     >

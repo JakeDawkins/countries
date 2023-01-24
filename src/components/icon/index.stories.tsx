@@ -6,9 +6,6 @@ import Icon, { icons, IconName } from '.';
 export default {
   title: 'Icon',
   component: Icon,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof Icon>;
 
 const allIconNames = Object.keys(icons) as IconName[];
@@ -26,4 +23,21 @@ export const Gallery = () => {
       })}
     </div>
   );
+};
+
+export const Playground = (args) => {
+  return (
+    <Icon
+      color={args.color}
+      size={args.size}
+      name={args.name}
+      accessibilityLabel={args.accessibilityLabel}
+    />
+  );
+};
+Playground.args = {
+  name: 'arrow-left',
+  size: 48,
+  color: '#abcdef',
+  accessibilityLabel: 'My Label',
 };
