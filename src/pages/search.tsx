@@ -23,7 +23,6 @@ function Search() {
 
   const countries = data.countries;
 
-  console.log({ countries });
   return (
     <Layout>
       <h1 className="text-4xl font-bold">Search</h1>
