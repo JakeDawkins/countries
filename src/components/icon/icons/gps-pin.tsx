@@ -8,7 +8,7 @@ function GpsPin({
 }: BaseIconProps) {
   return (
     <svg
-      ariaLabel={accessibilityLabel}
+      aria-label={accessibilityLabel}
       width={`${size}px`}
       height={`${size}px`}
       viewBox="0 0 24 24"
