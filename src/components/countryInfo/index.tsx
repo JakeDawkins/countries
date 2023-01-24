@@ -87,6 +87,7 @@ function CountryInfo({ country }: CountryInfoProps) {
         ? country.languages.map((lang) => {
             return (
               <InfoTile
+                key={`${country.name}-${lang.name}`}
                 icon="speech-bubble"
                 color="#130478"
                 label="Language"
