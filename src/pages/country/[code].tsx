@@ -42,11 +42,8 @@ function CountryDetail() {
         {country.name || 'Not Found'}
         {country.emoji ? `  ${country.emoji}` : undefined}
       </h1>
-
+      {/* todo -- failure */}
       <CountryInfo country={country} />
-
-      {/* TODO - failure */}
-      <p>Country Code: {code}</p>
     </Layout>
   );
 }
