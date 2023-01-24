@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import Link from 'next/link';
-import { CountryInfo, Icon } from '../../components';
+import { CountryInfo, Icon, IconTile } from '../../components';
 import {
   CountryQuery,
   Country,
@@ -61,6 +61,13 @@ function CountryDetail() {
         {country.emoji ? `  ${country.emoji}` : undefined}
       </h1>
       <CountryInfo country={country} />
+      <hr className="mt-8 mb-4" />
+      <IconTile
+        title="Note"
+        message="This data is fetched from a source that may contain incorrect information, especially around languages"
+        color="#eab208"
+        icon="info"
+      />
     </>
   );
 }

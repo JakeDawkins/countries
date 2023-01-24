@@ -12,6 +12,7 @@ import Map from './icons/map';
 import Phone from './icons/phone';
 import SpeechBubble from './icons/speech-bubble';
 import Wallet from './icons/wallet';
+import Info from './icons/info';
 
 export type IconName =
   | 'arrow-left'
@@ -24,7 +25,8 @@ export type IconName =
   | 'map'
   | 'phone'
   | 'speech-bubble'
-  | 'wallet';
+  | 'wallet'
+  | 'info';
 export const icons: { [name in IconName]: React.ElementType } = {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
@@ -37,6 +39,7 @@ export const icons: { [name in IconName]: React.ElementType } = {
   phone: Phone,
   'speech-bubble': SpeechBubble,
   wallet: Wallet,
+  info: Info,
 };
 
 interface IconProps {
