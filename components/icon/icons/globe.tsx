@@ -1,9 +1,14 @@
 import React from 'react';
 import type { BaseIconProps } from '../types';
 
-function Globe({ size = 32, color = '#000000' }: BaseIconProps) {
+function Globe({
+  size = 32,
+  color = '#000000',
+  accessibilityLabel,
+}: BaseIconProps) {
   return (
     <svg
+      aria-label={accessibilityLabel}
       width={`${size}px`}
       height={`${size}px`}
       viewBox="0 0 24 24"
