@@ -2,26 +2,28 @@ import React, { useEffect, useState } from 'react';
 import Icon, { IconName } from '../icon';
 import Link from 'next/link';
 import useBreakpoint from '../../utils/useBreakpoint';
+import { useRouter } from 'next/router';
 
 interface NavItemProps {
   href: string;
   label: string;
   icon: IconName;
   isCollapsed: boolean;
+  isActive?: boolean;
 }
 /**
  * A single link button in the navbar
  *
  * controls the growing/shrinking buttons and their animations
  */
-function NavItem({ href, label, isCollapsed, icon }: NavItemProps) {
+function NavItem({ href, label, isCollapsed, icon, isActive }: NavItemProps) {
   return (
     <Link aria-label={isCollapsed ? label : undefined} href={href}>
       <div
         // collapsed: 36px high/wide = 2px total border, 16px total pad, 18px icon
-        className={`mt-4 flex flex-row h-9 p-2 px-4 items-center border border-gray-500 rounded-full overflow-x-clip ${
+        className={`mt-4 flex flex-row h-9 p-2 px-4 items-center border rounded-full overflow-x-clip ${
           isCollapsed ? 'w-9 px-2' : 'w-full'
-        }`}
+        } ${isActive ? 'border-green-700 bg-green-50' : 'border-gray-500'}`}
         style={{
           transition: 'all 0.3s',
         }}
@@ -46,6 +48,8 @@ function NavItem({ href, label, isCollapsed, icon }: NavItemProps) {
 }
 
 function NavBar() {
+  const { pathname } = useRouter();
+  // const path = router.pathname
   // set up the default collapsed state. If the window is over 640px, it will
   // be expanded by default. For small devices, it will be collapsed by default.
   // changing the width of the window after original render will automatically
@@ -76,6 +80,7 @@ function NavBar() {
               label="Home"
               icon="home"
               isCollapsed={isCollapsed}
+              isActive={pathname === '/'}
             />
           </li>
           <li>
@@ -84,6 +89,7 @@ function NavBar() {
               label="Search"
               icon="search"
               isCollapsed={isCollapsed}
+              isActive={pathname.startsWith('/search')}
             />
           </li>
           <li>
@@ -92,6 +98,7 @@ function NavBar() {
               label="List"
               icon="list"
               isCollapsed={isCollapsed}
+              isActive={pathname.startsWith('/list')}
             />
           </li>
         </ul>
