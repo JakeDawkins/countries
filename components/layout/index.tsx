@@ -8,7 +8,7 @@ function Layout({ children }) {
       <ErrorBoundary>
         <NavBar />
         <ErrorBoundary>
-          <main className="m-4 mx-auto p-4 w-2/3 h-full border-4 border-red-500">
+          <main className="m-4 mx-auto p-4 w-2/3 border-4 border-red-500">
             {children}
           </main>
         </ErrorBoundary>
