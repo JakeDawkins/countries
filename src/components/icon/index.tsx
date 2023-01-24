@@ -7,6 +7,10 @@ import Globe from './icons/globe';
 import Home from './icons/home';
 import List from './icons/list';
 import Search from './icons/search';
+import GpsPin from './icons/gps-pin';
+import Map from './icons/map';
+import Phone from './icons/phone';
+import SpeechBubble from './icons/speech-bubble';
 
 export type IconName =
   | 'arrow-left'
@@ -14,7 +18,11 @@ export type IconName =
   | 'globe'
   | 'home'
   | 'list'
-  | 'search';
+  | 'search'
+  | 'gps-pin'
+  | 'map'
+  | 'phone'
+  | 'speech-bubble';
 export const icons: { [name in IconName]: React.ElementType } = {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
@@ -22,6 +30,10 @@ export const icons: { [name in IconName]: React.ElementType } = {
   home: Home,
   list: List,
   search: Search,
+  'gps-pin': GpsPin,
+  map: Map,
+  phone: Phone,
+  'speech-bubble': SpeechBubble,
 };
 
 interface IconProps {

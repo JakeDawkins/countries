@@ -17,14 +17,14 @@ function InfoTile({ label, value, color = '#cccccc', icon }: InfoTileProps) {
       style={{ borderColor: color }}
     >
       <div
-        className="h-full w-12 justify-center items-center"
+        className="flex h-full w-24 justify-center items-center"
         style={{ backgroundColor: color }}
       >
         {icon ? <Icon name={icon} size={32} color={'#FFFFFF'} /> : null}
       </div>
       <div className="h-full w-full p-4">
-        <p className="uppercase text-xl">{label}</p>
-        <p className="uppercase text-md">{value}</p>
+        <p className="text-xl">{label}</p>
+        <p className="text-md">{value}</p>
       </div>
     </div>
   );
@@ -38,16 +38,36 @@ function CountryInfo({ country }: CountryInfoProps) {
   return (
     <div className="flex flex-row flex-wrap">
       {country.capital ? (
-        <InfoTile label="Capital" value={country.capital} />
+        <InfoTile
+          icon="gps-pin"
+          color="#10B981"
+          label="Capital"
+          value={country.capital}
+        />
       ) : null}
       {country.continent ? (
-        <InfoTile label="Continent" value={country.continent.name} />
+        <InfoTile
+          icon="map"
+          color="#2563EB"
+          label="Continent"
+          value={country.continent.name}
+        />
       ) : null}
       {country.native ? (
-        <InfoTile label="Native Name" value={country.native} />
+        <InfoTile
+          icon="speech-bubble"
+          color="#DB2777"
+          label="Native Name"
+          value={country.native}
+        />
       ) : null}
       {country.phone ? (
-        <InfoTile label="Phone Code" value={country.phone} />
+        <InfoTile
+          icon="phone"
+          color="#7C3AED"
+          label="Phone Code"
+          value={`+${country.phone}`}
+        />
       ) : null}
     </div>
   );
