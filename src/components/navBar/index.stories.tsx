@@ -11,10 +11,17 @@ export default {
   },
 } as ComponentMeta<typeof NavBar>;
 
-export const Responsive = () => {
-  return (
-    <div className="flex flex-1 h-full">
-      <NavBar />
-    </div>
-  );
+export const Basic = () => {
+  return <NavBar />;
+};
+
+export const ListPageActive = () => {
+  return <NavBar />;
+};
+ListPageActive.parameters = {
+  nextRouter: {
+    pathname: '/list',
+    path: '/list',
+    asPath: '/list',
+  },
 };

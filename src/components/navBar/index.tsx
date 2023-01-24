@@ -104,7 +104,7 @@ function NavBar() {
         </ul>
       </div>
       <button
-        className="flex w-full h-10 justify-end items-center px-2"
+        className="flex w-full h-10 justify-end items-center px-2 mt-8"
         type="button"
         aria-label={`click to ${isCollapsed ? 'expand' : 'collapse'} nav`}
         onClick={() => setIsCollapsed(!isCollapsed)}
