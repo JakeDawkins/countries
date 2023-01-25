@@ -8,9 +8,6 @@ import { mockCountryInfo } from '../../utils/mockData';
 export default {
   title: 'CountryInfo',
   component: CountryInfo,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof CountryInfo>;
 
 export const FullData = () => {
