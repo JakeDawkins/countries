@@ -3,6 +3,7 @@ import { gql, useQuery } from '@apollo/client';
 import { CountriesListQuery } from '../__generated__/graphql';
 import Link from 'next/link';
 import { groupCountriesByStartingLetter } from '../utils/groupCountriesByStartingLetter';
+import { CountryTile } from '../components';
 
 export const COUNTRIES_LIST_QUERY = gql`
   query CountriesList {
@@ -13,22 +14,6 @@ export const COUNTRIES_LIST_QUERY = gql`
     }
   }
 `;
-
-interface CountryTileProps {
-  name: string;
-  code: string;
-  emoji: string;
-}
-
-function CountryTile({ name, code, emoji }: CountryTileProps) {
-  return (
-    <Link className="flex mr-4 mt-4" key={code} href={`/country/${code}`}>
-      <p className="flex self-start p-2 border rounded-md border-gray-300 hover:border-gray-600 hover:bg-gray-50">
-        {name} {emoji}
-      </p>
-    </Link>
-  );
-}
 
 function CountryList() {
   const { loading, data, error } =

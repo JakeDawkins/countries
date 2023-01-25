@@ -52,10 +52,16 @@ function CountryDetail() {
 
   return (
     <>
-      <Link href="/list" className=" justify-start items-center flex flex-row">
+      <button
+        // this doesn't work well when users navigate directly to the page
+        // it uses the browser's history, and navigates back, no matter
+        // where they come from
+        onClick={() => router.back()}
+        className=" justify-start items-center flex flex-row"
+      >
         <Icon name="arrow-left" size={18} />
-        <p className="underline ml-2">Back to List</p>
-      </Link>
+        <p className="underline ml-2">Go Back</p>
+      </button>
       <h1 className="text-4xl font-bold mb-8 mt-8">
         {country.name || 'Not Found'}
         {country.emoji ? `  ${country.emoji}` : undefined}
