@@ -22,6 +22,9 @@
     breaking changes on the backend trickling down to affect frontend clients
   - I have also had years of personal experience, giving me an ability to work
     quickly and safely with GraphQL for this project.
+  - **Other options considered**: REST
+    - Chose not to go with REST, since client caching would require additional tooling, and
+      GraphQL services are built in such a way to generate automatic TS types more easily.
 
 - Countries API
 
@@ -50,6 +53,9 @@
     to large public projects.
   - Since this deployability is built-into the tool, it made deploying this project
     to vercel a low-effort project.
+  - **Other options considered**: Create React App, Gatsby, Vite
+    - Chose NextJS, since it's a more complete framework instead of a toolchain setup,
+      making getting started on this kind of project quick and easy.
 
 - Tailwind CSS
 
@@ -66,6 +72,12 @@
     ambiguity of naming of classes.
   - Tailwind integrates well with next.js and doesn’t need additional explcit build
     steps in config, since `next`.
+  - **Other options considered**: Styled-components, CSS Modules
+    - CSS Modules pulls the styles out into a module away from the component, and makes
+      rapid iteration on design a bit harder
+    - Styled Components is great for setting up component primitives, but it still pulls
+      the styles one level further away from the implementation of the component,
+      making things like state-dependent and props-dependent styles messier.
 
 - Jest
 
@@ -85,6 +97,11 @@
     at DOM attributes, but should be able to look at things the user can see
     or interact with. Knowing about the props of a specific component is much less
     reliable for testing than knowing the rendered output as a result of that prop.
+  - **Other options considered**: Enzyme
+    - Enzyme has a great selection of tools, and it is very good for inspecting
+      the internal state of components. I think in most cases, Enzyme is overkill
+      and can encourage bad testing practices like testing implementation details
+      and not user effects.
 
 - Cypress
 
@@ -98,6 +115,10 @@
     has an excellent onboarding experience. The ease of getting a simple test suite
     up-and-running and my own personal experience with this product are the reasons
     I chose this tool over others, like Selenium.
+  - **Other options considered**: Selenium
+    - Selenium tooling hs very mature, but also harder to ship and integrate with
+      CI. Cypress has a _much_ easier setup and the documentation around cypress
+      is excellent.
 
 - React Storybook
 
