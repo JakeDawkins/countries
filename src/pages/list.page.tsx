@@ -3,7 +3,7 @@ import { gql, useQuery } from '@apollo/client';
 import { CountriesListQuery } from '../__generated__/graphql';
 import Link from 'next/link';
 import { groupCountriesByStartingLetter } from '../utils/groupCountriesByStartingLetter';
-import { CountryTile } from '../components';
+import { CountryLink } from '../components';
 
 export const COUNTRIES_LIST_QUERY = gql`
   query CountriesList {
@@ -40,7 +40,7 @@ function CountryList() {
                 <div className="flex flex-row flex-wrap">
                   {grouped[key].map(({ code, name, emoji }) => {
                     return (
-                      <CountryTile
+                      <CountryLink
                         key={code}
                         name={name}
                         code={code}

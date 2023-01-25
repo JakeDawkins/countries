@@ -1,0 +1,41 @@
+import { Story, ArgsTable } from '@storybook/addon-docs';
+import IconTile from './';
+
+# IconTile
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+  - [Accessibility](#accessibility)
+- [Gallery](#gallery)
+
+## Overview
+
+`IconTile` is a general-use tile to present data to the user. This can be
+an info/error tile, or a stats tile.
+
+<Story id="icontile--with-message-only" />
+
+## Props
+
+<ArgsTable of={IconTile} />
+
+## Usage
+
+Currently, the icon only shows in `white`, so the `color` passed to the `IconTile`
+must be dark enough to provide enough contrast and be accessible.
+
+You may pass only a `message`
+
+<Story id="icontile--with-message-only" />
+
+Or a `message` and a `title`
+
+<Story id="icontile--with-message-and-title" />
+
+### Accessibility
+
+## Gallery
+
+<Story id="icontile--with-message-only" />
+<Story id="icontile--with-message-and-title" />

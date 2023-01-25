@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { CountriesListQuery } from '../__generated__/graphql';
 import Link from 'next/link';
-import { CountryTile, Icon } from '../components';
+import { CountryLink, Icon } from '../components';
 
 const COUNTRIES_LIST_QUERY = gql`
   query CountriesList {
@@ -52,7 +52,7 @@ function Search() {
       <hr className="mt-8" />
       {filteredCountries.map((country) => {
         return (
-          <CountryTile
+          <CountryLink
             name={country.name}
             emoji={country.emoji}
             code={country.code}

@@ -1,0 +1,24 @@
+import { Story, ArgsTable } from '@storybook/addon-docs';
+import Layout from './';
+
+# Layout
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+
+## Overview
+
+`Layout` is a general-use layout component with a left and right side.
+The left side is purely for the `NavBar` and is automatically added. Right side
+is for content, and that is where children passed to `Layout` are rendered.
+
+## Props
+
+<ArgsTable of={Layout} />
+
+## Usage
+
+Layout is not meant to be used outside of the `_app.tsx` file. This file is responsible
+for setting up the root of the react tree. If rendered elsewhere, there may be
+visible loading flashes between pages and/or duplicate NavBars shown.

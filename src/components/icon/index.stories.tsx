@@ -3,9 +3,16 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Icon, { icons, IconName } from '.';
 
+import Docs from './docs';
+
 export default {
   title: 'Icon',
   component: Icon,
+  parameters: {
+    docs: {
+      page: Docs,
+    },
+  },
 } as ComponentMeta<typeof Icon>;
 
 const allIconNames = Object.keys(icons) as IconName[];

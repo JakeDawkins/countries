@@ -1,0 +1,36 @@
+import { Story, ArgsTable } from '@storybook/addon-docs';
+import NavBar from './';
+
+# NavBar
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Gallery](#gallery)
+
+## Overview
+
+`NavBar` is a web/mobile navigation bar component, which is automatically used
+in the `Layout` component. It is route-aware and knows about the width of
+the window it has been placed in.
+
+On small devices, the `NavBar` will render as collapsed by default, taking up
+less screen real-estate.
+
+It collapses automatically when the window shrinks, but does not re-expand, when
+the window grows again.
+
+## Props
+
+`NavBar` accepts no props. Is uses the router and `window` to do all the work
+it needs to.
+
+## Usage
+
+Nav is not meant to be used outside of the `Layout` component. If rendered
+elsewhere, there may be visible loading flashes between pages and/or duplicate
+NavBars shown.
+
+## Gallery
+
+<Story id="navbar--basic" />

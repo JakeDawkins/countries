@@ -2,10 +2,16 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Layout from '.';
+import Docs from './docs';
 
 export default {
   title: 'Layout',
   component: Layout,
+  parameters: {
+    docs: {
+      page: Docs,
+    },
+  },
 } as ComponentMeta<typeof Layout>;
 
 export const Responsive = () => {

@@ -1,0 +1,39 @@
+import { Story, ArgsTable } from '@storybook/addon-docs';
+import Icon from './';
+
+# Icon
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+  - [Accessibility](#accessibility)
+- [Gallery](#gallery)
+
+## Overview
+
+The `Icon` component is a single component that allows rendering of any
+available icons found under `components/icon/icons`. It is adjustable, and
+prevents the need to use the individual icons in most cases.
+
+<Story id="icon--playground" />
+
+## Props
+
+<ArgsTable of={Icon} />
+
+## Usage
+
+Icons must be given a `name` and a `size`, but otherwise, you don't _need_ to
+pass anything else. If an icon needs to be aligned specially (like being given
+margins), or given a background color, you can wrap the `Icon` in a `div` and
+style the div appropriately.
+
+### Accessibility
+
+`Icon` has an `accessibilityLabel` prop which maps to the `aria-label` prop in
+the dom. If the icon is meant to represent data and is _not purely decoration_,
+then the `accessibilityLabel` prop should be used.
+
+## Gallery
+
+<Story id="icon--gallery" />

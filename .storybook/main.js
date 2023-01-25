@@ -1,4 +1,8 @@
 module.exports = {
+  webpackFinal: (config) => {
+    config.resolve.extensions = ['.mdx', ...config.resolve.extensions];
+    return config;
+  },
   stories: [
     '../src/components/**/*.stories.tsx',
     // "../stories/**/*.stories.mdx",

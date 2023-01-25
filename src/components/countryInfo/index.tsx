@@ -23,6 +23,7 @@ export function InfoTile({
       style={{ borderColor: color }}
     >
       <div
+        aria-hidden
         className="flex h-full w-24 justify-center items-center"
         style={{ backgroundColor: color }}
       >

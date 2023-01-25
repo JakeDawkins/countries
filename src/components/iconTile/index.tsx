@@ -4,11 +4,11 @@ import Icon, { IconName } from '../icon';
 interface IconTileProps {
   title?: string;
   message: string;
-  icon?: IconName;
+  icon: IconName;
   color?: string;
 }
 
-function IconTile({ title, message, color = '#cccccc', icon }: IconTileProps) {
+function IconTile({ title, message, color = '#999999', icon }: IconTileProps) {
   return (
     <div className="flex">
       <div
@@ -20,7 +20,7 @@ function IconTile({ title, message, color = '#cccccc', icon }: IconTileProps) {
           className="flex h-full w-24 justify-center items-center bg-yellow-500"
           style={{ backgroundColor: color }}
         >
-          {icon ? <Icon name={icon} size={32} color={'#FFFFFF'} /> : null}
+          <Icon name={icon} size={32} color={'#FFFFFF'} />
         </div>
         <div className="h-full w-full p-4 items-center">
           {title ? <p className="text-xl">{title}</p> : null}

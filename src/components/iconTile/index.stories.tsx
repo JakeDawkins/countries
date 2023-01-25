@@ -2,9 +2,16 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import IconTile from '.';
 
+import Docs from './docs';
+
 export default {
   title: 'IconTile',
   component: IconTile,
+  parameters: {
+    docs: {
+      page: Docs,
+    },
+  },
 } as ComponentMeta<typeof IconTile>;
 
 export const WithMessageAndTitle = () => {
@@ -12,7 +19,8 @@ export const WithMessageAndTitle = () => {
     <IconTile
       title="This data may be incorrect"
       message="This data is fetched from an API source that may contain incorrect information"
-      color="#cccccc"
+      color="#999999"
+      icon="globe"
     />
   );
 };

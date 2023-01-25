@@ -5,9 +5,16 @@ import CountryInfo from '.';
 import { Country } from '../../__generated__/graphql';
 import { mockCountryInfo } from '../../utils/mockData';
 
+import Docs from './docs';
+
 export default {
   title: 'CountryInfo',
   component: CountryInfo,
+  parameters: {
+    docs: {
+      page: Docs,
+    },
+  },
 } as ComponentMeta<typeof CountryInfo>;
 
 export const FullData = () => {
