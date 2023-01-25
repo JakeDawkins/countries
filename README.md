@@ -1,5 +1,7 @@
 # Countries
 
+<a href="https://main--63d1598e3121a53332060deb.chromatic.com" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
+
 This app is meant as a resource for finding information about various countries,
 like currency, language spoken, and continent. It is based off the
 [Countries API](https://github.com/trevorblades/countries) by [@trevorblades](https://github.com/trevorblades).
@@ -20,19 +22,26 @@ libraries, and organizational strategies. These decisions are logged in the
 
 ## Documentation
 
-Much of this project is documented using [React Storybook](https://storybook.js.org).
+<a href="https://main--63d1598e3121a53332060deb.chromatic.com" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 
-While you don't need to start storybook locally to use it for documentation, it
-is a much better experience.
+Much of this project is documented using [React Storybook](https://storybook.js.org).
+This project has a [publicly published storybook instance](https://main--63d1598e3121a53332060deb.chromatic.com)
+for viewing components and reading docs.
 
 In most `src/components` directory, there are `index.stories.tsx` and `docs.mdx` files.
 These files include programmatic sandboxes and written documentation on the usage,
 accessibility concerns, and props for each of the built components.
 
+> Note: There is a `docs` and a `canvas` tab at the top of each page. The `docs`
+> tab is there to display the `docs.mdx` files, and the `canvas` tab is the rendering
+> of the examples defined in the `index.stories.mdx` file. You can use the left
+> sidebar to navigate between components.
+
 ### Starting React Storybook
 
-To run storybook, clone this repo and then run the following (requires
-[yarn](https://yarnpkg.com/getting-started/install) to be installed previously):
+You can also run storybook locally if you'd like. To run storybook, clone this
+repo and then run the following (requires [yarn](https://yarnpkg.com/getting-started/install)
+to be installed previously):
 
 ```
 cd countries
@@ -45,11 +54,6 @@ npm run storybook
 
 Once up and running, go to [localhost:6006](http://localhost:6006) to see the
 app running.
-
-> Note: There is a `docs` and a `canvas` tab at the top of each page. The `docs`
-> tab is there to display the `docs.mdx` files, and the `canvas` tab is the rendering
-> of the examples defined in the `index.stories.mdx` file. You can use the left
-> sidebar to navigate between components.
 
 ## Running the application locally
 
