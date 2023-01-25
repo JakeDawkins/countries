@@ -6,13 +6,12 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "test": "jest --watch",
-    "test:ci": "jest --ci",
+    "test:unit": "jest --watch",
     "generate:types": "graphql-codegen",
     "generate:types:watch": "graphql-codegen -w",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:run:dev": "start-server-and-test dev http://localhost:3000 cypress:run"
+    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cypress:run"
   },
   "dependencies": {
     "@apollo/client": "^3.7.4",
