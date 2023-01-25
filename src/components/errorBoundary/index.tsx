@@ -6,6 +6,7 @@ class ErrorBoundary extends React.Component {
     this.state = { hasError: false };
   }
 
+  /* eslint-disable */
   static getDerivedStateFromError(error) {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
@@ -15,9 +16,10 @@ class ErrorBoundary extends React.Component {
     // You can also log the error to an error reporting service
     // logErrorToMyService(error, errorInfo);
   }
+  /* eslint-enable */
 
   render() {
-    // @ts-ignore TS2339: Property 'hasError' does not exist on type 'Readonly<{}>'
+    // @ts-expect-error TS2339: Property 'hasError' does not exist on type 'Readonly<{}>'
     if (this.state.hasError) {
       return (
         <div>
@@ -29,7 +31,8 @@ class ErrorBoundary extends React.Component {
       );
     }
 
-    // @ts-ignore TS2339: Property 'children' does not exist on type 'Readonly<{}>'
+    // @ts-expect-error TS2339: Property 'children' does not exist on type 'Readonly<{}>'
+    // eslint-disable-next-line
     return this.props.children;
   }
 }

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import { CountryInfo } from '../components';
 
 function Home() {
   return (

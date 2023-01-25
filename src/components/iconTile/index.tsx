@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon, { IconName } from '../icon';
+import Icon, { type IconName } from '../icon';
 
 interface IconTileProps {
   title?: string;

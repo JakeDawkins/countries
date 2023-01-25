@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Icon, { IconName } from '../icon';
+import Icon, { type IconName } from '../icon';
 import Link from 'next/link';
 import useBreakpoint from '../../utils/useBreakpoint';
 import { useRouter } from 'next/router';
@@ -34,7 +34,7 @@ function NavItem({ href, label, isCollapsed, icon, isActive }: NavItemProps) {
         }}
       >
         {/* this div keeps the icon a set size, where it can't be squeezed */}
-        <div /*className="w-5 h-5"*/>
+        <div /* className="w-5 h-5" */>
           <Icon name={icon} size={18} />
         </div>
         <p
@@ -113,7 +113,7 @@ function NavBar() {
         className="flex w-full h-10 justify-end items-center px-2 mt-8"
         type="button"
         aria-label={`click to ${isCollapsed ? 'expand' : 'collapse'} nav`}
-        onClick={() => setIsCollapsed(!isCollapsed)}
+        onClick={() => { setIsCollapsed(!isCollapsed); }}
       >
         <Icon size={20} name={isCollapsed ? 'arrow-right' : 'arrow-left'} />
       </button>

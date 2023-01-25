@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { gql, useQuery } from '@apollo/client';
-import { CountriesListQuery } from '../__generated__/graphql';
-import Link from 'next/link';
+import { type CountriesListQuery } from '../__generated__/graphql';
 import { groupCountriesByStartingLetter } from '../utils/groupCountriesByStartingLetter';
 import { CountryLink } from '../components';
 
@@ -25,7 +24,7 @@ function CountryList() {
   );
 
   if (loading) return <p>Loading...</p>;
-  if (error || !data?.countries) return <p>Error</p>;
+  if ((error != null) || ((data?.countries) == null)) return <p>Error</p>;
 
   return (
     <div className="pb-8">

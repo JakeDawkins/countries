@@ -1,4 +1,5 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import Page404 from './404.page';
 
 import mockRouter from 'next-router-mock';

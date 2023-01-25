@@ -1,12 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
-import Link from 'next/link';
 import { CountryInfo, Icon, IconTile } from '../../components';
 import {
-  CountryQuery,
-  Country,
-  CountryInfoFragment,
+  type CountryQuery,
+  type CountryInfoFragment,
 } from '../../__generated__/graphql';
 
 export const COUNTRY_QUERY = gql`
@@ -45,7 +43,7 @@ function CountryDetail() {
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error || !data?.country) return <p>Error</p>;
+  if ((error != null) || ((data?.country) == null)) return <p>Error</p>;
 
   // TODO -- fix fragment typing
   const country = data.country as CountryInfoFragment;
@@ -56,7 +54,7 @@ function CountryDetail() {
         // this doesn't work well when users navigate directly to the page
         // it uses the browser's history, and navigates back, no matter
         // where they come from
-        onClick={() => router.back()}
+        onClick={() => { router.back(); }}
         className=" justify-start items-center flex flex-row"
       >
         <Icon name="arrow-left" size={18} />

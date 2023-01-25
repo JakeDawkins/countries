@@ -1,7 +1,6 @@
 import {
-  CountriesListQuery,
-  Country,
-  CountryInfoFragment,
+  type CountriesListQuery,
+  type CountryInfoFragment,
 } from '../__generated__/graphql';
 
 export const mockCountryInfo: CountryInfoFragment = {

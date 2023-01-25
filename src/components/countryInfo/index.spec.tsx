@@ -1,7 +1,9 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { mockCountryInfo } from '../../utils/mockData';
 import CountryInfo, { InfoTile } from '.';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const { __typename, continent, emoji, name, native, phone, capital } =
   mockCountryInfo;
 const mockCountryInfoFragment = {

@@ -1,10 +1,11 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import { GraphQLError } from 'graphql';
 import ListPage, { COUNTRIES_LIST_QUERY } from './list.page';
 
 import mockRouter from 'next-router-mock';
-import { mockCountryInfo, mockCountryList } from '../utils/mockData';
+import { mockCountryList } from '../utils/mockData';
 jest.mock('next/router', () => require('next-router-mock'));
 
 describe('ListPage', () => {

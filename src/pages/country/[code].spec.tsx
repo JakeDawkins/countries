@@ -1,4 +1,5 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import CountryDetailPage, { COUNTRY_QUERY } from './[code].page';
 import { GraphQLError } from 'graphql';

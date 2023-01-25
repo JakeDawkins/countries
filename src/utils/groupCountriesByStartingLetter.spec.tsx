@@ -1,7 +1,4 @@
-import {
-  groupCountriesByStartingLetter,
-  CountryListDetail,
-} from './groupCountriesByStartingLetter';
+import { groupCountriesByStartingLetter } from './groupCountriesByStartingLetter';
 
 describe('groupCountriesByStartingLetter', () => {
   it('handles empty list', () => {

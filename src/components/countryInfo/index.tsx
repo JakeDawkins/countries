@@ -1,7 +1,6 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client';
-import { Country, CountryInfoFragment } from '../../__generated__/graphql';
-import Icon, { IconName } from '../icon';
+import { type CountryInfoFragment } from '../../__generated__/graphql';
+import Icon, { type IconName } from '../icon';
 
 interface InfoTileProps {
   label: string;
@@ -86,6 +85,7 @@ function CountryInfo({ country }: CountryInfoProps) {
       ) : null}
       {country.languages?.length
         ? country.languages.map((lang) => {
+            if(!lang?.name) return null;
             return (
               <InfoTile
                 key={`${country.name}-${lang.name}`}

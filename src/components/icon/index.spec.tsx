@@ -1,4 +1,5 @@
-import Icon, { icons, IconName } from '.';
+import React from 'react';
+import Icon, { icons, type IconName } from '.';
 import { render, screen } from '@testing-library/react';
 
 const cases = Object.keys(icons) as IconName[];
