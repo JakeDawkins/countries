@@ -15,7 +15,14 @@ function Home() {
         <Link href="/list" className="underline font-bold">
           List
         </Link>{' '}
-        page will open details about that country.
+        page will open details about that country. Searching for a country on
+        the{' '}
+        <Link href="/search" className="underline font-bold">
+          Search
+        </Link>{' '}
+        page will search by name of the country only. Clicking on a country from
+        the search page will open the same detailed country page as the list
+        page.
       </p>
     </>
   );
