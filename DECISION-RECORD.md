@@ -1,5 +1,17 @@
 # Decision Record
 
+- [Codespaces template for next.js](#codespaces-template-for-nextjs)
+- [GraphQL](#graphql)
+- [Countries API](#countries-api)
+- [Next.js](#nextjs)
+- [Tailwind CSS](#tailwind-css)
+- [Jest](#jest)
+- [React Testing Library](#react-testing-library)
+- [Cypress](#cypress)
+- [React Storybook](#react-storybook)
+- [Chromatic](#chromatic)
+- [Directory Structure choices](#directory-structure-choices)
+
 ## Codespaces template for next.js
 
 - Thsis is a very thin setup around the basic nextjs docs including the codespaces config

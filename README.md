@@ -1,5 +1,18 @@
 # Countries
 
+- [Overview](#overview)
+- [Viewing the deployed application](#viewing-the-deployed-application)
+- [Decisions made](#decisions-made)
+- [Documentation](#documentation)
+  - [Starting React Storybook](#starting-react-storybook)
+- [Running the Application Locally](#running-the-application-locally)
+- [Using Codespaces](#using-codespaces)
+- [Running Tests](#running-tests)
+  - [Running Unit/Integration tests](#running-unitintegration-tests)
+  - [Running End-to-End tests](#running-end-to-end-tests)
+
+## Overview
+
 <a href="https://main--63d1598e3121a53332060deb.chromatic.com" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 
 This app is meant as a resource for finding information about various countries,
